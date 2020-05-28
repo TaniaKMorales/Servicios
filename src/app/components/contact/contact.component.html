@@ -1,0 +1,98 @@
+<div class="form-container">
+    <h1>Registro De Vendedores</h1>
+    <form [formGroup]= "contactForm" (ngSubmit)="onSaveForm()">
+        <input type="text" formControlName= "name" placeholder="Ingresa Nombre">
+        <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div class="container-error-message" *ngIf="name.errors.required">
+                El Nombre es requerido
+            </div>
+            <div class="container-error-message" *ngIf="name.errors.minlength">
+                El Nombre debe tener como minimo 5 caracteres
+            </div>
+        </div>
+
+        <input type="text" formControlName= "apaterno" placeholder="Ingresa Apellido Paterno">
+        <div class="alert-danger" *ngIf="apaterno.invalid && (apaterno.dirty || apaterno.touched)">
+            <div class="container-error-message" *ngIf="apaterno.errors.required">
+                El Apellido Paterno es requerido
+            </div>
+            <div class="container-error-message" *ngIf="apaterno.errors.minlength">
+                El Apellido paterno debe tener como minimo 5 caracteres
+            </div>
+        </div>
+
+        <input type="text" formControlName= "amaterno" placeholder="Ingresa Apellido Materno">
+        <div class="alert-danger" *ngIf="amaterno.invalid && (amaterno.dirty || amaterno.touched)">
+            <div class="container-error-message" *ngIf="amaterno.errors.required">
+                El Apellido Materno es requerido
+            </div>
+            <div class="container-error-message" *ngIf="amaterno.errors.minlength">
+                El Apellido Materno debe tener como minimo 5 caracteres
+            </div>
+        </div>
+
+        <input type="text" formControlName= "direccion" placeholder="Ingresa Direccion">
+        <div class="alert-danger" *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+            <div class="container-error-message" *ngIf="direccion.errors.required">
+                La Direccion es requerido
+            </div>
+            <div class="container-error-message" *ngIf="direccion.errors.minlength">
+                La Direccion debe tener como minimo 5 caracteres
+            </div>
+        </div>
+
+        <input type="text" formControlName= "telefono" placeholder="Ingresa Numero de Telefono">
+        <div class="alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+            <div class="container-error-message" *ngIf="telefono.errors.required">
+                El Numero de Telefono es requerido
+            </div>
+            <div class="container-error-message" *ngIf="telefono.errors.minlength">
+                El Numero de Telefono debe tener como minimo 5 caracteres
+            </div>
+        </div>
+
+        <input type="text" formControlName= "celular" placeholder="Ingresa Numero de Celular">
+        <div class="alert-danger" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+            <div class="container-error-message" *ngIf="celular.errors.required">
+                El Numero de Celular es requerido
+            </div>
+            <div class="container-error-message" *ngIf="celular.errors.minlength">
+                El Numero de Celular debe tener como minimo 5 caracteres
+            </div>
+        </div>
+
+        <input type="email" formControlName= "email" placeholder="Ingresa E-mail">
+        <div class="alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="container-error-message" *ngIf="email.errors.required">
+                El E-mail no es valido
+            </div>
+            <div class="container-error-message" *ngIf="email.errors.minlength">
+                El E-mail debe tener como minimo 5 caracteres
+            </div>
+            <div class="container-error-message" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                El E-mail debe ser valido.
+          </div>
+        </div>
+
+        <input type="password" formControlName= "password" placeholder="Ingresa Contraseña">
+        <div class="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div class="container-error-message" *ngIf="password.errors.required">
+                La Contraseña es requerido
+            </div>
+            <div class="container-error-message" *ngIf="password.errors.minlength">
+                La Contraseña debe tener como minimo 5 caracteres
+            </div>
+        </div>
+        
+        <input type="password" formControlName= "conpassword" placeholder="Repite tu Contraseña">
+        <div class="alert-danger" *ngIf="conpassword.invalid && (conpassword.dirty || conpassword.touched)">
+            <div class="container-error-message" *ngIf="conpassword.errors.required">
+                La Contraseña debe ser la misma
+            </div>
+            <div class="container-error-message" *ngIf="conpassword.errors.minlength">
+                El Nombre debe tener como minimo 5 caracteres
+            </div>
+        </div>
+        <button type="submit" class="btn-send" [disabled]="!contactForm.valid">Guardar</button>
+    </form>
+</div>
